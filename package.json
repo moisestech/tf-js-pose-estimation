@@ -1,0 +1,36 @@
+{
+  "name": "tf-js-pose-estimation",
+  "version": "1.0.0",
+  "description": "Tensorflow.js React Hand-Pose Estimation",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "css-loader": "^5.0.1",
+    "file": "^0.2.2",
+    "style-loader": "^2.0.0",
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.5.0",
+    "webpack": "^5.20.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moisestech/tf-js-pose-estimation.git"
+  },
+  "keywords": [
+    "tensorflowjs",
+    "reactjs",
+    "pose-estimation",
+    "camera",
+    "mobile"
+  ],
+  "author": "Moises Sanabria",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moisestech/tf-js-pose-estimation/issues"
+  },
+  "homepage": "https://github.com/moisestech/tf-js-pose-estimation#readme"
+}
