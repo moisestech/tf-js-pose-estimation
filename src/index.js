@@ -1,3 +1,11 @@
-let project_name = "Tensorflow.js React Hand-Pose Estimation";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './styles.css';
+import App from './App';
 
-console.log(project_name);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
