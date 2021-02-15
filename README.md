@@ -4,13 +4,25 @@
 
 ## ⚙ Features
 
+- React 17
+- React Hooks
+- ES8
+- PropTypes
+
 ## 👁️‍🗨️ Project Preview
 
 Coming Soon!
 
 ## 📚 HOW-TO
 
+To start app: `npm start`
+Fore additional info: []()
+
 ## 🗺 URL Tree
+
+```bash
+├── /                          #Home
+```
 
 ## 🌿 App tree
 
@@ -36,14 +48,17 @@ Coming Soon!
 
 ## ⛰️ Roadmap
 
+1. Migrate to TypeScript
+2. Make Mobile Friendly
+3. Write Tests
+
 ## To-Do's
 
 1. Finnish Webpack Config
 2. Finnish Tutorial
 3. Finnish README.md page
-4. Add HOWTO.md page
-5. Add File Diagram
-6. Add Babel Compilation
-7. Migrate to TypeScript
-8. Make Mobile Friendly
-9. Write Tests
+4. Finnish HOWTO.md page
+5. Add Logo
+6. Add WebApp Preview Gif
+7. Add File Diagram
+8. Add Babel Compilation
