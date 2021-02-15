@@ -6,6 +6,9 @@
 
 - React 17
 - React Hooks
+- React Webcam
+- Tensorflow @2.8.5
+- Pose Model COCOSSD
 - ES8
 - PropTypes
 
