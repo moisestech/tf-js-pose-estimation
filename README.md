@@ -65,3 +65,6 @@ Fore additional info: []()
 6. Add WebApp Preview Gif
 7. Add File Diagram
 8. Add Babel Compilation
+
+---
+[Moises Sanabria](https://www.moises.tech/)
