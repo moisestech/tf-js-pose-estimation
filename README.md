@@ -14,6 +14,26 @@ Coming Soon!
 
 ## 🌿 App tree
 
+``` bash
+├── HOWTO.md
+├── LICENSE
+├── README.md
+├── package.json
+├── public
+│   ├── _redirects
+│   ├── assets
+│   │   └── favicon.ico
+│   └── index.html
+├── src
+│   ├── App
+│   │   └── index.js
+│   ├── index.js
+│   ├── styles.css
+│   └── utilities
+│       └── index.js
+└── webpack.config.js
+```
+
 ## ⛰️ Roadmap
 
 ## To-Do's
