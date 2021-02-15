@@ -1,6 +1,6 @@
 # HOW-TO
 
-## **1.** Install dependencies 
+## **1.** Install dependencies
 
 ## **2.** Import dependencies
 
@@ -26,8 +26,10 @@
 ### npm start
 
 - **scripts**: `npm start` runs scripts: `{ "start": "webpack serve"}`,
-  - store your webpack commmands in package.json#scripts
+  - webpack commmands are stored in package.json#scripts
   - alternatively run `npx webpack` or `node_modules/./bin/webpack`
+
+---
 
 ## Package.JSON
 
@@ -35,6 +37,8 @@
 
 - **scripts**: `npm start` runs scripts: { "start": "webpack serve"},
 - **main**: `webpack.config.js` is where webpack starts bundling from.
+
+---
 
 ## WEBPACK HOW-TO
 
@@ -49,11 +53,15 @@
 - **CleanWebpackPlugin**: info coming soon.
 - **UglifyPlugin**: info coming soon.
 
+---
+
 ## BABEL HOW-TO
 
 ### Babel Loader
 
+---
+
 ## TREE
 
 - Install Tree with Homebrew using `bew install tree`
-- To create dir structure `tree -I 'node_modules|package-lock.json|dist|'`
+- To create dir structure `tree -I 'node_modules|package-lock.json|dist'`
