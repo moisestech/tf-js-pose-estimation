@@ -1,21 +1,5 @@
 # HOW-TO
 
-## **1.** Install dependencies
-
-## **2.** Import dependencies
-
-## **3.** Setup webcam and canvas
-
-## **4.** Define references to those
-
-## **5.** Load handpose
-
-## **6.** Detect function
-
-## **7.** Drawing utilities
-
-## **8.** Draw functions
-
 ---
 
 ## NPM
@@ -63,5 +47,5 @@
 
 ## TREE
 
-- Install Tree with Homebrew using `bew install tree`
+- Install Tree with Homebrew using `brew install tree`
 - To create dir structure `tree -I 'node_modules|package-lock.json|dist'`
