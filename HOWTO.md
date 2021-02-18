@@ -1,5 +1,21 @@
 # HOW-TO
 
+## **1.** Install dependencies
+
+## **2.** Import dependencies
+
+## **3.** Setup webcam and canvas
+
+## **4.** Define references to those
+
+## **5.** Load posenet
+
+## **6.** Detect function
+
+## **7.** Drawing utilities from tensorflow
+
+## **8.** Draw functions
+
 ---
 
 ## NPM
