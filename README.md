@@ -1,16 +1,17 @@
-# Tensorflow.js React Hand-Pose Estimation
+# Tensorflow.js React Pose Estimation
 
-## **Interactive Webcam Hand-Pose Estimation!**
+## **Interactive Real time Webcam Pose Estimation!**
 
 ## ⚙ Features
 
-- React 17
-- React Hooks
-- React Webcam
-- Tensorflow @2.8.5
-- Pose Model COCOSSD
-- ES8
-- PropTypes
+- [React 17](https://reactjs.org/blog/2020/10/20/react-v17.html)
+- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
+- [React Webcam](https://www.npmjs.com/package/react-webcam)
+- [Canvas API](https://www.w3schools.com/tags/canvas_arc.asp)
+- [Tensorflow @2.8.5](https://www.tensorflow.org/js/models)
+- [Posenet Model](https://github.com/tensorflow/tfjs-models/tree/master/posenet)
+- [ES8](https://www.w3schools.com/js/js_2018.asp)
+- [PropTypes](https://www.npmjs.com/package/prop-types)
 
 ## 👁️‍🗨️ Project Preview
 
@@ -19,7 +20,7 @@ Coming Soon!
 ## 📚 HOW-TO
 
 To start app: `npm start`
-Fore additional info: []()
+For additional info click [here]()
 
 ## 🗺 URL Tree
 
@@ -63,8 +64,7 @@ Fore additional info: []()
 4. Finnish HOWTO.md page
 5. Add Logo
 6. Add WebApp Preview Gif
-7. Add File Diagram
-8. Add Babel Compilation
+7. Add Babel Compilation
 
 ---
 [Moises Sanabria](https://www.moises.tech/)
