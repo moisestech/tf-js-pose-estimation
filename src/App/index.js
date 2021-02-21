@@ -19,11 +19,10 @@ import * as posenet from "@tensorflow-models/posenet";
 // drawing x, y, point on canvas
 import { drawKeypoints, drawSkeleton } from "../utils";
 
-export default function App() {
-  let project_name = "Tensorflow.js React Pose Estimation";
+export default function App({project_name = 'Tensorflow.js React Pose Estimation'}) {
 
   return (  
-    {project_name}
+    <h1>{project_name}</h1>
   )
 }
 
