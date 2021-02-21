@@ -17,9 +17,12 @@
 
 Coming Soon!
 
-## 📚 HOW-TO
+## 🚀 Start
 
 To start app: `npm start`
+
+## 📚 HOW-TO
+
 For additional info click [here]()
 
 ## 🗺 URL Tree
