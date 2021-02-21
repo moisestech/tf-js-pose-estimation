@@ -17,7 +17,7 @@ import * as tf from "@tensorflow/tfjs";
 import * as posenet from "@tensorflow-models/posenet";
 
 // drawing x, y, point on canvas
-import { drawKeypoints, drawSkeleton } from "./utilities";
+import { drawKeypoints, drawSkeleton } from "../utils";
 
 export default function App() {
   let project_name = "Tensorflow.js React Pose Estimation";
