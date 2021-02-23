@@ -22,7 +22,16 @@ import { drawKeypoints, drawSkeleton } from "../utils";
 export default function App({project_name = 'Tensorflow.js React Pose Estimation'}) {
 
   return (  
-    <h1>{project_name}</h1>
+    <div clasName="App">
+      <h1>{project_name}</h1>
+      <header>
+        {/* where one intakes data for tfjs  */}
+        <Webcam ref={webcamRef} className="react-webcam" />
+
+        {/* where one draws the segmentation layer */}
+        <Canvas ref={canvasRef} className="react-canvas" />
+      </header>
+    </div>
   )
 }
 
