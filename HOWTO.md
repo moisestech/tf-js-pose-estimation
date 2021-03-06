@@ -27,6 +27,19 @@
 
 ## **5.** Load posenet
 
+  ```javascript
+  const runPosenet = async () => {
+    const net = await posenet.load({
+      inputResolution: { width: 640, height: 480 },
+      scale: 0.8,
+    });
+    //
+    setInterval(() => {
+      detect(net);
+    }, 100);
+  };
+  ```
+
 ## **6.** Detect function
 
 ## **7.** Drawing utilities from tensorflow
