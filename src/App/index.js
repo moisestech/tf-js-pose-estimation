@@ -21,6 +21,9 @@ import { drawKeypoints, drawSkeleton } from "../utils";
 
 export default function App({project_name = 'Tensorflow.js React Pose Estimation'}) {
 
+  const webCamRef = useRef(null);
+  const canvasRef = useRef(null);
+
   return (  
     <div clasName="App">
       <h1>{project_name}</h1>
