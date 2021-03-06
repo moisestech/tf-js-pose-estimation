@@ -20,9 +20,20 @@ import * as posenet from "@tensorflow-models/posenet";
 import { drawKeypoints, drawSkeleton } from "../utils";
 
 export default function App({project_name = 'Tensorflow.js React Pose Estimation'}) {
-
   const webCamRef = useRef(null);
   const canvasRef = useRef(null);
+
+  // Load posenet
+  const runPosenet = async () => {
+    const net = await posenet.load({
+      inputResolution: { width: 640, height: 480 },
+      scale: 0.8,
+    });
+    //
+    setInterval(() => {
+      detect(net);
+    }, 100);
+  };
 
   return (  
     <div clasName="App">
