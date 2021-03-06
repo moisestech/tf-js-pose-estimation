@@ -59,6 +59,19 @@ export default function App({project_name = 'Tensorflow.js React Pose Estimation
     }
   };
 
+  // updates the utility data to the canvas
+  const drawCanvas = (pose, video, videoWidth, videoHeight, canvas) => {
+    const ctx = canvas.current.getContext("2d");
+    canvas.current.width = videoWidth;
+    canvas.current.height = videoHeight;
+
+    drawKeypoints(pose["keypoints"], 0.6, ctx);
+    drawSkeleton(pose["keypoints"], 0.7, ctx);
+  };
+
+  // inits model
+  runPosenet();
+
   return (  
     <div clasName="App">
       <h1>{project_name}</h1>
