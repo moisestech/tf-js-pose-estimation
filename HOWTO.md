@@ -42,6 +42,31 @@
 
 ## **6.** Detect function
 
+  ```javascript
+  // sets canvas and webcam for drawing 
+  const detect = async (net) => {
+  if (
+    typeof webcamRef.current !== "undefined" &&
+    webcamRef.current !== null &&
+    webcamRef.current.video.readyState === 4
+  ) {
+    // Get Video Properties
+    const video = webcamRef.current.video;
+    const videoWidth = webcamRef.current.video.videoWidth;
+    const videoHeight = webcamRef.current.video.videoHeight;
+
+    // Set video width
+    webcamRef.current.video.width = videoWidth;
+    webcamRef.current.video.height = videoHeight;
+
+    // Make Detections
+    const pose = await net.estimateSinglePose(video);
+    console.log(pose);
+
+    drawCanvas(pose, video, videoWidth, videoHeight, canvasRef);
+  }
+  ```
+
 ## **7.** Drawing utilities from tensorflow
 
 ## **8.** Draw functions
