@@ -35,6 +35,30 @@ export default function App({project_name = 'Tensorflow.js React Pose Estimation
     }, 100);
   };
 
+  // sets canvas and webcam for drawing 
+  const detect = async (net) => {
+    if (
+      typeof webcamRef.current !== "undefined" &&
+      webcamRef.current !== null &&
+      webcamRef.current.video.readyState === 4
+    ) {
+      // Get Video Properties
+      const video = webcamRef.current.video;
+      const videoWidth = webcamRef.current.video.videoWidth;
+      const videoHeight = webcamRef.current.video.videoHeight;
+
+      // Set video width
+      webcamRef.current.video.width = videoWidth;
+      webcamRef.current.video.height = videoHeight;
+
+      // Make Detections
+      const pose = await net.estimateSinglePose(video);
+      console.log(pose);
+
+      drawCanvas(pose, video, videoWidth, videoHeight, canvasRef);
+    }
+  };
+
   return (  
     <div clasName="App">
       <h1>{project_name}</h1>
