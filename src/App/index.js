@@ -55,11 +55,12 @@ export default function App({project_name = 'Tensorflow.js React Pose Estimation
       const pose = await net.estimateSinglePose(video);
       console.log(pose);
 
+      // to pass utility functions real-time data
       drawCanvas(pose, video, videoWidth, videoHeight, canvasRef);
     }
   };
 
-  // updates the utility data to the canvas
+  // updates the utility functions w/ data to the canvas
   const drawCanvas = (pose, videoWidth, videoHeight, canvas) => {
     const ctx = canvas.current.getContext("2d");
     canvas.current.width = videoWidth;
