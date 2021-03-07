@@ -29,7 +29,8 @@ export default function App({project_name = 'Tensorflow.js React Pose Estimation
       inputResolution: { width: 640, height: 480 },
       scale: 0.8,
     });
-    //
+
+    // run detect function on a specific basis near real-time
     setInterval(() => {
       detect(net);
     }, 100);
