@@ -67,9 +67,35 @@
   }
   ```
 
-## **7.** Drawing utilities from tensorflow
+## **7.** Drawing utilities from Tensorflow.js
 
-## **8.** Draw functions
+  **i.** Create new `utilities/index.js` file and copy over the [**Tensorflow.js Utilities**](https://github.com/tensorflow/tfjs-models/blob/master/posenet/demos/demo_util.js)
+
+  **ii.** From the file, in our main **`src/App/index.js`** pull out the **`drawSkeleton`** and **`drawKeypoints`** methods.
+
+  ```javascript
+  // after the import tensorflow and posenet
+  import { drawKeypoints, drawSkeleton } from "../utils";
+  ```
+
+## **8.** **drawCanvas** functions
+
+  **i.** Function **`drawCanvas`** in **`src/App/index.js`** is called from within the detect function.
+
+  **ii.** In **`drawCanvas`** pass through our near real-time data **`pose, video, videoWidth, videoHeight, canvas`**.
+
+  **iii.** **`videoWidth, videoHeight`** set the **`canvas.current`** properties.
+
+  ```javascript
+  const drawCanvas = (pose, videoWidth, videoHeight, canvas) => {
+    const ctx = canvas.current.getContext("2d");
+    canvas.current.width = videoWidth;
+    canvas.current.height = videoHeight;
+
+    drawKeypoints(pose["keypoints"], 0.6, ctx);
+    drawSkeleton(pose["keypoints"], 0.7, ctx);
+  };
+  ```
 
 ---
 
