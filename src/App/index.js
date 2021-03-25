@@ -38,6 +38,7 @@ export default function App({project_name = 'Tensorflow.js React Pose Estimation
 
   // sets canvas and webcam for drawing 
   const detect = async (net) => {
+    // Check data is available
     if (
       typeof webcamRef.current !== "undefined" &&
       webcamRef.current !== null &&
