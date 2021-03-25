@@ -42,6 +42,16 @@
 
 ## **6.** Detect function
 
+  **i.** async function **`detect`** runs when the app starts, goes ahead and detects our model and our webcam.
+
+  **ii.** **`if`** statement will check the **`webcamRef`** is defined with a **`readState`** of 4.
+
+  **iii.** Once **`webcamRef`** is ready, the const **`video`**, **`videoWidth`**, and **`videoHeight`** are defined from **`webcamRef.current.video`**.
+
+  **iv.** Width const **`video, videoWidth, videoHeight`** the width and height of the **`webcamRef`** and **`canvasRef`** are set.
+
+  **v.** await/async **`net.estimateSinglePoser(video)`** is stored in **`pose`** const which returns an **array** of **objects**.
+
   ```javascript
   // sets canvas and webcam for drawing 
   const detect = async (net) => {
