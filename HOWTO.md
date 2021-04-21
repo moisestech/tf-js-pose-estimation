@@ -27,85 +27,85 @@
 
 ## **5.** Load posenet
 
-  ```javascript
-  const runPosenet = async () => {
-    const net = await posenet.load({
-      inputResolution: { width: 640, height: 480 },
-      scale: 0.8,
-    });
-    //
-    setInterval(() => {
-      detect(net);
-    }, 100);
-  };
-  ```
+```javascript
+const runPosenet = async () => {
+  const net = await posenet.load({
+    inputResolution: { width: 640, height: 480 },
+    scale: 0.8,
+  });
+  //
+  setInterval(() => {
+    detect(net);
+  }, 100);
+};
+```
 
 ## **6.** Detect function
 
-  **i.** async function **`detect`** runs when the app starts, goes ahead and detects our model and our webcam.
+**i.** async function **`detect`** runs when the app starts, goes ahead and detects our model and our webcam.
 
-  **ii.** **`if`** statement will check the **`webcamRef`** is defined with a **`readState`** of 4.
+**ii.** **`if`** statement will check the **`webcamRef`** is defined with a **`readState`** of 4.
 
-  **iii.** Once **`webcamRef`** is ready, the const **`video`**, **`videoWidth`**, and **`videoHeight`** are defined from **`webcamRef.current.video`**.
+**iii.** Once **`webcamRef`** is ready, the const **`video`**, **`videoWidth`**, and **`videoHeight`** are defined from **`webcamRef.current.video`**.
 
-  **iv.** Width const **`video, videoWidth, videoHeight`** the width and height of the **`webcamRef`** and **`canvasRef`** are set.
+**iv.** Width const **`video, videoWidth, videoHeight`** the width and height of the **`webcamRef`** and **`canvasRef`** are set.
 
-  **v.** await/async **`net.estimateSinglePoser(video)`** is stored in **`pose`** const which returns an **array** of **objects**.
+**v.** await/async **`net.estimateSinglePoser(video)`** is stored in **`pose`** const which returns an **array** of **objects**.
 
-  ```javascript
-  // sets canvas and webcam for drawing 
-  const detect = async (net) => {
-  if (
-    typeof webcamRef.current !== "undefined" &&
-    webcamRef.current !== null &&
-    webcamRef.current.video.readyState === 4
-  ) {
-    // Get Video Properties
-    const video = webcamRef.current.video;
-    const videoWidth = webcamRef.current.video.videoWidth;
-    const videoHeight = webcamRef.current.video.videoHeight;
+```javascript
+// sets canvas and webcam for drawing
+const detect = async (net) => {
+if (
+  typeof webcamRef.current !== "undefined" &&
+  webcamRef.current !== null &&
+  webcamRef.current.video.readyState === 4
+) {
+  // Get Video Properties
+  const video = webcamRef.current.video;
+  const videoWidth = webcamRef.current.video.videoWidth;
+  const videoHeight = webcamRef.current.video.videoHeight;
 
-    // Set video width
-    webcamRef.current.video.width = videoWidth;
-    webcamRef.current.video.height = videoHeight;
+  // Set video width
+  webcamRef.current.video.width = videoWidth;
+  webcamRef.current.video.height = videoHeight;
 
-    // Make Detections
-    const pose = await net.estimateSinglePose(video);
-    console.log(pose);
+  // Make Detections
+  const pose = await net.estimateSinglePose(video);
+  console.log(pose);
 
-    drawCanvas(pose, video, videoWidth, videoHeight, canvasRef);
-  }
-  ```
+  drawCanvas(pose, video, videoWidth, videoHeight, canvasRef);
+}
+```
 
 ## **7.** Drawing utilities from Tensorflow.js
 
-  **i.** Create new `utilities/index.js` file and copy over the [**Tensorflow.js Utilities**](https://github.com/tensorflow/tfjs-models/blob/master/posenet/demos/demo_util.js)
+**i.** Create new `utilities/index.js` file and copy over the [**Tensorflow.js Utilities**](https://github.com/tensorflow/tfjs-models/blob/master/posenet/demos/demo_util.js)
 
-  **ii.** From the file, in our main **`src/App/index.js`** pull out the **`drawSkeleton`** and **`drawKeypoints`** methods.
+**ii.** From the file, in our main **`src/App/index.js`** pull out the **`drawSkeleton`** and **`drawKeypoints`** methods.
 
-  ```javascript
-  // after the import tensorflow and posenet
-  import { drawKeypoints, drawSkeleton } from "../utils";
-  ```
+```javascript
+// after the import tensorflow and posenet
+import { drawKeypoints, drawSkeleton } from "../utils";
+```
 
 ## **8.** **drawCanvas** functions
 
-  **i.** Function **`drawCanvas`** in **`src/App/index.js`** is called from within the detect function.
+**i.** Function **`drawCanvas`** in **`src/App/index.js`** is called from within the detect function.
 
-  **ii.** In **`drawCanvas`** pass through our near real-time data **`pose, video, videoWidth, videoHeight, canvas`**.
+**ii.** In **`drawCanvas`** pass through our near real-time data **`pose, video, videoWidth, videoHeight, canvas`**.
 
-  **iii.** **`videoWidth, videoHeight`** set the **`canvas.current`** properties.
+**iii.** **`videoWidth, videoHeight`** set the **`canvas.current`** properties.
 
-  ```javascript
-  const drawCanvas = (pose, videoWidth, videoHeight, canvas) => {
-    const ctx = canvas.current.getContext("2d");
-    canvas.current.width = videoWidth;
-    canvas.current.height = videoHeight;
+```javascript
+const drawCanvas = (pose, videoWidth, videoHeight, canvas) => {
+  const ctx = canvas.current.getContext("2d");
+  canvas.current.width = videoWidth;
+  canvas.current.height = videoHeight;
 
-    drawKeypoints(pose["keypoints"], 0.6, ctx);
-    drawSkeleton(pose["keypoints"], 0.7, ctx);
-  };
-  ```
+  drawKeypoints(pose["keypoints"], 0.6, ctx);
+  drawSkeleton(pose["keypoints"], 0.7, ctx);
+};
+```
 
 ---
 
@@ -133,16 +133,17 @@
 
 ## WEBPACK HOW-TO
 
-- **Webpack**: Module bundler.
-- **webpack-cli**: is the interface we use to communicate with webpack.
-- **webpack-dev-server**: info coming soon.
+- [**Webpack**](https://www.npmjs.com/package/webpack): a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset.
+- [**webpack-cli**](https://www.npmjs.com/package/webpack-cli): is the interface we use to communicate with webpack. webpack CLI provides a set of tools to improve the setup of custom webpack configuration.
+- [**webpack-dev-server**](https://www.npmjs.com/package/webpack-dev-server): Use webpack with a development server that provides live reloading. This should be used for development only.
+  - It uses [webpack-dev-middleware](https://github.com/webpack/webpack-dev-middleware) under the hood, which provides fast in-memory access to the webpack assets.
 
 ### Plugins
 
-- **CopyWebpackPlugin**: info coming soon.
-- **HtmlWebpackPlugin**: info coming soon.
-- **CleanWebpackPlugin**: info coming soon.
-- **UglifyPlugin**: info coming soon.
+- [**CopyWebpackPlugin**](https://www.npmjs.com/package/copy-webpack-plugin): Copies individual files or entire directories, which already exist, to the build directory.
+- [**HtmlWebpackPlugin**](https://www.npmjs.com/package/html-webpack-plugin): Plugin that simplifies creation of HTML files to serve your bundles.
+- [**CleanWebpackPlugin**](https://www.npmjs.com/package/clean-webpack-plugin): A webpack plugin to remove/clean your build folder(s).
+- [**UglifyPlugin**](https://www.npmjs.com/package/uglifyjs-webpack-plugin): This plugin uses [uglify-js](https://github.com/mishoo/UglifyJS) to minify your JavaScript.
 
 ---
 
