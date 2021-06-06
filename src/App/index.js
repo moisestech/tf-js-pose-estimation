@@ -7,19 +7,19 @@
 // 7. Drawing utilities from tensorflow
 // 8. Draw functions
 
-import React, { useRef } from "react";
+import React, { useRef } from 'react';
 
 // access to webcam
-import Webcam from "react-webcam";
+import Webcam from 'react-webcam';
 
 // running object detection
-import * as tf from "@tensorflow/tfjs";
-import * as posenet from "@tensorflow-models/posenet";
+import * as tf from '@tensorflow/tfjs';
+import * as posenet from '@tensorflow-models/posenet';
 
 // drawing x, y, point on canvas
-import { drawKeypoints, drawSkeleton } from "../utils";
+import { drawKeypoints, drawSkeleton } from '../utils';
 
-export default function App({project_name = 'Tensorflow.js React Pose Estimation'}) {
+export default function App() {
   const webCamRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -36,11 +36,11 @@ export default function App({project_name = 'Tensorflow.js React Pose Estimation
     }, 100);
   };
 
-  // sets canvas and webcam for drawing 
+  // sets canvas and webcam for drawing
   const detect = async (net) => {
     // Check data is available
     if (
-      typeof webcamRef.current !== "undefined" &&
+      typeof webcamRef.current !== 'undefined' &&
       webcamRef.current !== null &&
       webcamRef.current.video.readyState === 4
     ) {
@@ -64,20 +64,20 @@ export default function App({project_name = 'Tensorflow.js React Pose Estimation
 
   // updates the utility functions w/ data to the canvas
   const drawCanvas = (pose, videoWidth, videoHeight, canvas) => {
-    const ctx = canvas.current.getContext("2d");
+    const ctx = canvas.current.getContext('2d');
     canvas.current.width = videoWidth;
     canvas.current.height = videoHeight;
 
-    drawKeypoints(pose["keypoints"], 0.6, ctx);
-    drawSkeleton(pose["keypoints"], 0.7, ctx);
+    drawKeypoints(pose['keypoints'], 0.6, ctx);
+    drawSkeleton(pose['keypoints'], 0.7, ctx);
   };
 
   // inits model
   runPosenet();
 
-  return (  
+  return (
     <div clasName="App">
-      <h1>{project_name}</h1>
+      <h1>Tensorflow.js React Pose Estimation</h1>
       <header>
         {/* where one intakes data for tfjs  */}
         <Webcam ref={webcamRef} className="react-webcam" />
@@ -86,7 +86,7 @@ export default function App({project_name = 'Tensorflow.js React Pose Estimation
         <Canvas ref={canvasRef} className="react-canvas" />
       </header>
     </div>
-  )
+  );
 }
 
 // video: https://www.youtube.com/watch?v=f7uBsb-0sGQ
